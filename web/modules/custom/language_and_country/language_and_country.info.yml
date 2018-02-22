@@ -6,3 +6,5 @@ package: 'Custom'
 dependencies:
   - default_content_deploy
   - language
+  - content_translation
+  - rh_taxonomy
