@@ -72,7 +72,6 @@ class CountryBlock extends BlockBase implements ContainerFactoryPluginInterface 
     $this->languageManager = $language_manager;
     $this->pathMatcher = $path_matcher;
     $this->requestStack = $request_stack;
-    $this->languageAndCountryUrlNegotiationMethod = $this->languageManager->getNegotiator()->getNegotiationMethodInstance('language-and-country-url');
   }
 
   /**
@@ -93,7 +92,7 @@ class CountryBlock extends BlockBase implements ContainerFactoryPluginInterface 
    * {@inheritdoc}
    */
   protected function blockAccess(AccountInterface $account) {
-    $access = $this->languageAndCountryUrlNegotiationMethod && $this->languageManager->isMultilingual()
+    $access = $this->languageManager->getNegotiator()->getNegotiationMethodInstance('language-and-country-url') && $this->languageManager->isMultilingual()
       ? AccessResult::allowed()
       : AccessResult::forbidden();
     return $access->addCacheTags(['config:configurable_language_list']);
@@ -106,7 +105,7 @@ class CountryBlock extends BlockBase implements ContainerFactoryPluginInterface 
     $build = [];
     $route_name = $this->pathMatcher->isFrontPage() ? '<front>' : '<current>';
     $type = $this->getDerivativeId();
-    $links = $this->languageAndCountryUrlNegotiationMethod->getCountrySwitchLinks($this->requestStack->getCurrentRequest(), $type, Url::fromRoute($route_name));
+    $links = $this->languageManager->getNegotiator()->getNegotiationMethodInstance('language-and-country-url')->getCountrySwitchLinks($this->requestStack->getCurrentRequest(), $type, Url::fromRoute($route_name));
 
     if (!empty($links)) {
       $build = [
