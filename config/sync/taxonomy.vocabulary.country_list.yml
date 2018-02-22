@@ -4,6 +4,6 @@ status: true
 dependencies: {  }
 name: 'Country list'
 vid: country_list
-description: ''
+description: 'The first country will be default'
 hierarchy: 0
 weight: 0

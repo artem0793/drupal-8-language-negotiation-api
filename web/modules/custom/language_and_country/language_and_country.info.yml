@@ -1,0 +1,8 @@
+name: 'Language and Country'
+type: module
+description: 'Provides possibility to display to URL Country code with language'
+core: 8.x
+package: 'Custom'
+dependencies:
+  - default_content_deploy
+  - language

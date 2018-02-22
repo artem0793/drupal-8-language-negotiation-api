@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Contains language_and_country.install.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function language_and_country_install() {
+
+}
