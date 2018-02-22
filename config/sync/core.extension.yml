@@ -27,6 +27,8 @@ module:
   options: 0
   page_cache: 0
   path: 0
+  rabbit_hole: 0
+  rh_taxonomy: 0
   search: 0
   serialization: 0
   shortcut: 0

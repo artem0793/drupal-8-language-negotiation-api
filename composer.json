@@ -23,6 +23,7 @@
         "drupal/console": "^1.0.2",
         "drupal/core": "~8.4",
         "drupal/default_content_deploy": "^1.0@alpha",
+        "drupal/rabbit_hole": "^1.0@beta",
         "drush/drush": "^9.0.0",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3"
